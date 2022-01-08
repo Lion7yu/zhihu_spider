@@ -38,17 +38,16 @@ router.get("/content", (req, res) => {
 
     const contentList = [];
     for (let a of articles) {
-      console.log(a.zhihuId);
       contentList.push({
-        zhihuId: a.zhihuId,
-        title: a.title,
+        zhihuId: a._doc.article.zhihuId,
+        title: a._doc.article.title,
         contentType: "dom", // link, fNull-text, dom, video, audio
         content: {
-          html: a.articleContentHtml,
-          text: a.articleContent,
+          html: a._doc.article.articleContentHtml,
+          text: a._doc.article.articleContent,
         },
-        tags: a.tags,
-        contentId: a._id,
+        tags: a._doc.article.tags,
+        contentId: a._doc.article._id,
       });
     }
     return {

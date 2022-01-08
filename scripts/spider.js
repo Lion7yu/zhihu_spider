@@ -1,4 +1,4 @@
-const RedisService = require("../services/content_id.service");
+const RedisService = require("../services/content_id_service");
 const Spider = require("../services/spider_service");
 
 switch (process.argv[2] || process.env.NODE_ARGV_2) {
