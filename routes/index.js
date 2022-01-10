@@ -29,7 +29,7 @@ router.get("/content", (req, res) => {
     const { pageSize, latestId } = req.body;
     const match = {};
     if (latestId) {
-      match._id = { $gte: latestId };
+      match._id = { $gt: latestId };
     }
     const articles = await Article.model
       .find(match)
@@ -47,7 +47,7 @@ router.get("/content", (req, res) => {
           text: a._doc.article.articleContent,
         },
         tags: a._doc.article.tags,
-        contentId: a._doc.article._id,
+        contentId: a._id,
       });
     }
     return {

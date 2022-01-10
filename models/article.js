@@ -18,6 +18,8 @@ const articleSchema = new Schema({
   ],
 });
 
+articleSchema.set("collection", "article");
+
 const articleModel = mongoose.model("article", articleSchema);
 
 module.exports = {
