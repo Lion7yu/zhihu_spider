@@ -5,7 +5,7 @@ const mongoSetting = require("../settings").mongo;
 mongoose.Promise = Promise;
 
 const { uri } = mongoSetting.url;
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(uri, { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on("open", () => {
