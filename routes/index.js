@@ -26,7 +26,7 @@ router.get("/spiderProtocol", (req, res) => {
 
 router.get("/content", (req, res) => {
   (async () => {
-    const { pageSize, latestId } = req.query;
+    const { pageSize, latestId } = req.body;
     const match = {};
     if (latestId) {
       match._id = { $gte: latestId };

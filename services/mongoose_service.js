@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const logger = require("../utils/loggers/app_logger");
-const mongoSetting = require("../settings").mongo;
+const mongoSetting = require("../setting").mongo;
 
 mongoose.Promise = Promise;
 
-const { uri } = mongoSetting.url;
+const uri = mongoSetting.url;
 mongoose.connect(uri, { useNewUrlParser: true });
 const db = mongoose.connection;
 

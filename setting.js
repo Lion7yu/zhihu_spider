@@ -3,7 +3,7 @@ const Production = {
     path: "var/logs/what_you_love",
   },
   mongo: {
-    url: "localhost:27017/what_you_love",
+    url: "mongodb://localhost:27017/what_you_love",
   },
 };
 
@@ -12,7 +12,7 @@ const Debug = {
     path: "./logs/",
   },
   mongo: {
-    url: "localhost:27017/what_you_love",
+    url: "mongodb://localhost:27017/what_you_love",
   },
 };
 

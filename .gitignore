@@ -1,1 +1,9 @@
 /node_modules
+logs/
+
+# cipher stuff, never commit it to a public repo
+/cipher
+
+/.stackdump
+
+setting.js
