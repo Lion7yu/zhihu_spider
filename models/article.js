@@ -8,7 +8,7 @@ const articleSchema = new Schema({
   articleContentHtml: String,
   createAt: { type: Number, default: Date.now.valueOf() },
   originCreatedAt: Number,
-  Column: String,
+  column: String,
   tags: [
     {
       name: String,
@@ -18,9 +18,9 @@ const articleSchema = new Schema({
   ],
 });
 
-articleSchema.set("collection", "article");
+// articleSchema.set("collection", "article");
 
-const articleModel = mongoose.model("article", articleSchema);
+const articleModel = mongoose.model("articles", articleSchema);
 
 module.exports = {
   model: articleModel,

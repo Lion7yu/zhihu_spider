@@ -8,10 +8,10 @@ const jieba = require("@node-rs/jieba");
 const Article = require("../models/article");
 
 class Tag {
-  constructor(name, score, value) {
+  constructor(name, value, score) {
     this.name = name;
-    this.score = score;
     this.value = value;
+    this.score = score;
   }
 }
 
@@ -54,7 +54,7 @@ async function getSingleArticle(id) {
 
   const html = res.data;
   const $ = cherrio.load(html);
-  const articleContent = $("div");
+  const articleContent = $("article");
   const tags = [];
   const title = $(".Post-Header").children(".Post-Title").text();
   const titleTags = jieba.extract(title, 5);
