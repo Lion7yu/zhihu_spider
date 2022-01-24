@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
     "@node-rs/jieba": "^1.5.1",
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",

@@ -40,7 +40,6 @@ async function recalculateTagScores() {
     recalculatedColumn.push(...articleColumn);
     recalculatedTags.push(...titleTags);
     recalculatedTags.push(...sysTags);
-
     await zhihuDB
       .collection("articles")
       .updateOne(
