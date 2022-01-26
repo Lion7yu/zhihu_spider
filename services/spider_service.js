@@ -1,9 +1,10 @@
 require("./mongoose_service");
 const axios = require("axios");
 const cherrio = require("cheerio");
-const RedisServer = require("./redis_service");
+const RedisServer = require("./content_id_service");
 const moment = require("moment");
 const jieba = require("@node-rs/jieba");
+const ESService = require("../services/es_service");
 
 const Article = require("../models/article");
 
@@ -14,7 +15,6 @@ class Tag {
     this.score = score;
   }
 }
-
 async function spideringArticles(count) {
   const ids = await RedisServer.getRandomZhihuIds(count);
   console.log(ids);
@@ -125,7 +125,8 @@ async function getSingleArticle(id) {
       returnNewDocument: true,
     }
   );
-  return result;
+  // return result;
+  return ESService.createOrUpdateContents(result);
 }
 
 module.exports = {
